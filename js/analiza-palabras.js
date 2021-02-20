@@ -1,23 +1,23 @@
 /* Crea tu función aquí */
-const deletrearPalabra = (arrayPalabras, contador) => {
+const deletrearPalabra = (palabra) => {
   let deletreo = "";
-  for (let i = 0; i < arrayPalabras[contador].length; i++) {
+  for (let i = 0; i < palabra.length; i++) {
     if (i == 0) {
-      deletreo = arrayPalabras[contador].charAt(i);
+      deletreo = palabra.charAt(i);
     } else {
-      deletreo += "-" + arrayPalabras[contador].charAt(i);
+      deletreo += "-" + palabra.charAt(i);
     }
   }
   return deletreo;
 }
 
-const mayusculaOrNotAndParOrNot = (arrayPalabras, contador) => {
-  let mayusculaOrNot = arrayPalabras[contador].charAt(0);
-  if (arrayPalabras[contador].length % 2 === 0 && mayusculaOrNot !== mayusculaOrNot.toUpperCase()) {
+const mayusculaOrNotAndParOrNot = (palabra) => {
+  let mayusculaOrNot = palabra.charAt(0);
+  if (palabra.length % 2 === 0 && mayusculaOrNot !== mayusculaOrNot.toUpperCase()) {
     console.log("La palabra es par y no empieza por mayúscula");
-  } else if (arrayPalabras[contador].length % 2 === 0 && mayusculaOrNot === mayusculaOrNot.toUpperCase()) {
+  } else if (palabra.length % 2 === 0 && mayusculaOrNot === mayusculaOrNot.toUpperCase()) {
     console.log("La palabra es par y empieza por mayúscula");
-  } else if (arrayPalabras[contador].length % 2 !== 0 && mayusculaOrNot === mayusculaOrNot.toUpperCase()) {
+  } else if (palabra.length % 2 !== 0 && mayusculaOrNot === mayusculaOrNot.toUpperCase()) {
     console.log("La palabra es impar y empieza por mayúscula");
   } else {
     console.log("La palabra es impar y no empieza por mayúscula");
@@ -25,8 +25,8 @@ const mayusculaOrNotAndParOrNot = (arrayPalabras, contador) => {
 
 }
 
-const containsPalabra = (arrayPalabras, contador) => {
-  if (arrayPalabras[contador].search("ble") !== -1) {
+const containsPalabra = (palabra) => {
+  if (palabra.search("ble") !== -1) {
     console.log("La palabra contiene 'ble'");
   } else {
     console.log("La palabra no contiene 'ble'");
@@ -40,10 +40,10 @@ const analizaPalabras = (arrayPalabras) => {
     /* Punto 2 */
     console.log(`Nº de caracteres: ${arrayPalabras[contador].length}`);
     /* Punto 3 */
-    console.log(`Deletreo: ${deletrearPalabra(arrayPalabras, contador)}`);
+    console.log(`Deletreo: ${deletrearPalabra(arrayPalabras[contador])}`);
     /* Punto 4 */
-    mayusculaOrNotAndParOrNot(arrayPalabras, contador);
+    mayusculaOrNotAndParOrNot(arrayPalabras[contador]);
     /* Punto 5 */
-    containsPalabra(arrayPalabras, contador);
+    containsPalabra(arrayPalabras[contador]);
   }
 }
