@@ -22,6 +22,7 @@ const mayusculaOrNotAndParOrNot = (arrayPalabras, contador) => {
   } else {
     console.log("La palabra es impar y no empieza por mayúscula");
   }
+
 }
 
 const containsPalabra = (arrayPalabras, contador) => {
