@@ -26,7 +26,7 @@ const mayusculaOrNotAndParOrNot = (arrayPalabras, contador) => {
 }
 
 const containsPalabra = (arrayPalabras, contador) => {
-  if (arrayPalabras[contador].substr(-3) == "ble") {
+  if (arrayPalabras[contador].search("ble") !== -1) {
     console.log("La palabra contiene 'ble'");
   } else {
     console.log("La palabra no contiene 'ble'");
